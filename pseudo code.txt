@@ -1,62 +1,54 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2758
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+Import necessary modules: subprocess, sys, os
 
-\f0\fs24 \cf0 Import necessary modules: subprocess, sys, os\
-\
-Define utility functions for installation:\
-- install_package(package):\
-    Execute pip install command for the specified package\
-- run_command(command):\
-    Try to execute the given command using subprocess\
-    If successful, return True\
-    If an error occurs, print the error message and return False\
-\
-Install 'llm' package:\
-- Call install_package with argument "llm"\
-\
-Install version compatible with METAL for GPU acceleration:\
-- Call run_command with specific commands for installation and setup\
-\
-Define functions for downloading and setting up the Llama-2-7b-chat model:\
-- get_model_path():\
-    Return a path specific to the user's environment\
-- download_model_if_not_exists(download_command):\
-    Check if the model exists at the generated path\
-    If not, print a message and start downloading the model\
-    Handle success or failure messages\
-\
-Start the download process for the Llama-2-7b-chat model:\
-- Define the download command\
-- Call download_model_if_not_exists with the download command\
-\
-Prepare to run the chat model:\
-- read_prompt_from_file(file_path):\
-    Read and return text from the specified file\
-- run_command_with_prompt(base_command, model, prompt):\
-    Construct a full command using base_command, model, and prompt\
-    Execute the command using subprocess\
-\
-Read the prompt text from "prompt.txt":\
-- Define base command and model name\
-- Call read_prompt_from_file with "prompt.txt"\
-\
-Define instructions for the user:\
-- clear_screen():\
-    Clear the terminal screen based on the operating system\
-- print_instructions():\
-    Print welcome message and instructions with colors and ASCII art\
-- user_acknowledgement():\
-    Prompt the user to press Enter to acknowledge the instructions\
-\
-Execute the instructions and user acknowledgement:\
-- Clear the screen\
-- Print the instructions\
-- Wait for user acknowledgement\
-\
-Start the chat session with UniBot:\
-- Call run_command_with_prompt with the base command, model name, and prompt text\
-}
+Define utility functions for installation:
+- install_package(package):
+    Execute pip install command for the specified package
+- run_command(command):
+    Try to execute the given command using subprocess
+    If successful, return True
+    If an error occurs, print the error message and return False
+
+Install 'llm' package:
+- Call install_package with argument "llm"
+
+Install version compatible with METAL for GPU acceleration:
+- Call run_command with specific commands for installation and setup
+
+Define functions for downloading and setting up the Llama-2-7b-chat model:
+- get_model_path():
+    Return a path specific to the user's environment
+- download_model_if_not_exists(download_command):
+    Check if the model exists at the generated path
+    If not, print a message and start downloading the model
+    Handle success or failure messages
+
+Start the download process for the Llama-2-7b-chat model:
+- Define the download command
+- Call download_model_if_not_exists with the download command
+
+Prepare to run the chat model:
+- read_prompt_from_file(file_path):
+    Read and return text from the specified file
+- run_command_with_prompt(base_command, model, prompt):
+    Construct a full command using base_command, model, and prompt
+    Execute the command using subprocess
+
+Read the prompt text from "prompt.txt":
+- Define base command and model name
+- Call read_prompt_from_file with "prompt.txt"
+
+Define instructions for the user:
+- clear_screen():
+    Clear the terminal screen based on the operating system
+- print_instructions():
+    Print welcome message and instructions with colors and ASCII art
+- user_acknowledgement():
+    Prompt the user to press Enter to acknowledge the instructions
+
+Execute the instructions and user acknowledgement:
+- Clear the screen
+- Print the instructions
+- Wait for user acknowledgement
+
+Start the chat session with UniBot:
+- Call run_command_with_prompt with the base command, model name, and prompt text
